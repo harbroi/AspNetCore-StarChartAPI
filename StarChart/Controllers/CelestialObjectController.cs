@@ -81,7 +81,7 @@ namespace StarChart.Controllers
             }
             celestial.Name = celestialObject.Name;
             celestial.OrbitalPeriod = celestialObject.OrbitalPeriod;
-            celestial.OrbitedObjectId = celestialObject.OrbitedObjectId;
+            celestial.OrbitedObjectId = (int)celestialObject.OrbitedObjectId;
             _context.Update(celestial);
             _context.SaveChanges();
             return NoContent();
@@ -110,7 +110,7 @@ namespace StarChart.Controllers
             }
             _context.RemoveRange(celestialObject);
             _context.SaveChanges();
-            return Ok(celestialObject);
+            return NoContent();
         }
     }
 }
